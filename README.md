@@ -1,73 +1,68 @@
-# Hydravo
+# Hydravo 💧
 
-**A production-ready Android hydration tracking application built with Flutter.**
+Hydravo is a premium, production-ready Android water tracking and reminder application built using Flutter and Dart. Designed with a gorgeous, high-performance UI, fluid animations, and robust backend integration, Hydravo helps users maintain optimal hydration levels tailored entirely to their personal health metrics and daily routines.
 
-Hydravo helps users maintain optimal hydration through personalized goal-setting, intelligent reminders, and detailed progress analytics — all powered by a clean, performant UI with full Firebase backend integration.
-
----
-
-## Features
-
-### UI & Theming
-
-- **Smooth animations** via physics-based micro-interactions using `flutter_animate`
-- **Three theme modes:** Light, Dark, and Pookie (a custom pink palette)
-- **Native asset support** including adaptive launcher icons and splash screens across Android API levels
-
-### Smart Reminder Engine
-
-- **Granular scheduling** with a continuous interval slider from 10 minutes to 4 hours
-- **Routine-aware delivery** — notifications are restricted to user-defined wake and sleep windows
-- **Battery-efficient** local processing via `flutter_local_notifications` with exact timezone handling
-
-### Analytics & History
-
-- **7-day bar charts** built with `fl_chart`, with color-coded bars reflecting goal completion levels
-- **Weekly summaries** including daily averages, streaks, peak performance days, and trend analysis
-- **Detailed day view** with scrollable intake logs and per-entry progress indicators
-
-### Health Personalization
-
-- **Automatic goal calculation** based on age, weight (kg/lbs), gender, and activity level
-- **Live profile editing** with instant notification rescheduling on any update
-
-### Over-the-Air Updates
-
-- **GitHub Releases delivery** — updates bypass the Play Store via a versioned `version.json` manifest
-- **In-app download UI** with a chunked byte stream and live progress display
-- **Native installation** triggered automatically via `open_filex` on download completion
-- **Maintenance mode** — a cloud flag locks the UI into a graceful hold screen during breaking deployments
+Built with an emphasis on user freedom, it features an advanced continuous manual reminder interval engine, deep analytics, and an over-the-air (OTA) in-app update framework hosted completely open-source via GitHub Releases.
 
 ---
 
-## Tech Stack
+## 🚀 Features
 
-| Layer | Technology | Purpose |
+### 🎨 Premium UI/UX & Themes
+* **Fluid Motion:** Built with advanced physics-based micro-interactions and smooth layout fades using `flutter_animate`.
+* **Theming Options:** Supports clean Light Mode, battery-saving Dark Mode, and a custom **Pookie Mode** (a cute personalized pink layout engine).
+* **Custom Brand Assets:** Fully custom adaptive launcher icons and native splash screens running natively across varying Android API scales.
+
+### 🔔 Advanced Custom Reminder Engine
+* **Ultimate Pacing Freedom:** Ditch the rigid choices. Features a continuous manual duration slider allowing alert tracking down to the exact minute (from 10 mins to 4 hours).
+* **Routine Boundaries:** Dynamically schedules smart, periodic push notification alerts strictly between user-configured Wake-up and Sleep windows.
+* **Local Processing:** Powered by `flutter_local_notifications` and exact timezone matching to repeat daily without draining background device battery pools.
+
+### 📊 Deep Historical Analytics
+* **Intake Charts:** Gorgeous interactive bar charts generated via `fl_chart` detailing a rolling 7-day hydration progress analysis.
+* **Dynamic Visual Cues:** Bars intelligently change color states depending on target percentage completions (Goal Hit, 75%+, Low).
+* **Weekly Reports:** Automated statistical breakdowns highlighting Daily Averages, Goal Streaks, Best Tracking Days, and algorithmic text-based progress analysis.
+* **Day Breakdown:** Sleek historical list layouts with accurate progress meters for quick historical logs.
+
+### ⚙️ Personalized Health Calibration
+* **Dynamic Baseline Calculator:** Automatically generates standard target hydration lines by cross-parsing user data metrics: Age, Weight (supports fluid KG/LBS calibrations), Gender, and localized Activity Levels.
+* **Interactive Profile Management:** Instantly update body metrics and personal display names on the fly, with automated notification rescheduling linked directly back to your routine updates.
+
+### 🔄 Over-The-Air (OTA) In-App Updates
+* **Seamless Upgrades:** Custom update system bypassing the Play Store entirely. The app pulls changes over a cache-busted stream straight from a repository `version.json`.
+* **In-App Downloading:** Downloads new releases directly inside a custom update modal using a chunked byte stream with a live-rendering percentage progress bar.
+* **Native Intent Installs:** Automatically invokes native Android package installation providers (`open_filex`) as soon as the package streams hit 100%.
+* **Maintenance Guard:** Built-in cloud switch to instantly lock down the application layout structure into a graceful maintenance display during breaking infrastructure upgrades.
+
+---
+
+## 🛠️ Tech Stack & Packages
+
+| Layer | Technology / Package | Description |
 | :--- | :--- | :--- |
-| Framework | Flutter & Dart | Cross-platform compilation |
-| State Management | `flutter_riverpod` | Reactive dependency injection and UI state |
-| Backend | Firebase Auth & Firestore | Authentication, Google Sign-In, cloud sync |
-| Notifications | `flutter_local_notifications` | Scheduled foreground and background alerts |
-| Charts | `fl_chart` | Interactive data visualizations |
-| Animations | `flutter_animate` | Chained layout transitions and motion |
-| OTA Updates | `dio` & `open_filex` | HTTP streaming and native APK installation |
+| **Core Framework** | Flutter & Dart | Multi-platform compilation target layer |
+| **State Management** | `flutter_riverpod` | Scalable, reactive dependency tracking and UI states |
+| **Backend Integration**| Firebase Auth / Firestore | Cloud account mapping, Google Sign-In, & live logs sync |
+| **Local Notifications** | `flutter_local_notifications` | High-importance exact foreground background alert streams |
+| **Data Visualization** | `fl_chart` | Interactive, highly responsive analytical graphs |
+| **Motion Layout** | `flutter_animate` | High-fidelity chained layout fade and scale triggers |
+| **OTA Installer** | `dio` & `open_filex` | Chunked HTTP byte streams and native apk intent calls |
 
 ---
 
-## Architecture
+## 📂 Project Architecture
 
-The project follows a feature-first clean architecture for clarity and scalability.
+The codebase follows a modular, feature-first clean architecture pattern designed for absolute scannability and ease of scaling:
 
-```
+```text
 lib/
 ├── core/
-│   ├── services/       # Background services (notifications, local storage)
-│   ├── theme/          # Color tokens and typography configuration
-│   └── utils/          # Constants and shared formatting helpers
+│   ├── services/       # Core background executors (Notifications, Local DB)
+│   ├── theme/          # Color palettes, custom typography configurations
+│   └── utils/          # Universal constants, helper string formatters
 └── features/
-    ├── auth/           # Login screens, Google auth flow, onboarding
-    ├── home/           # Dashboard, navigation state
-    ├── history/        # Weekly analytics, chart builders
-    ├── settings/       # Profile editor, reminder interval controls
-    └── update/         # OTA update dialog, maintenance screen
-```
+    ├── auth/           # Login layouts, Google auth, onboarding flows
+    ├── home/           # Dashboard viewports, navigation state anchors
+    ├── history/        # Weekly report metrics, fl_chart bar builders
+    ├── settings/       # Profile modifiers, custom manual interval selectors
+    └── update/         # In-app updater dialog modules, maintenance pages
