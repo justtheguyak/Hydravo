@@ -1,68 +1,159 @@
 # Hydravo 💧
 
-Hydravo is a premium, production-ready Android water tracking and reminder application built using Flutter and Dart. Designed with a gorgeous, high-performance UI, fluid animations, and robust backend integration, Hydravo helps users maintain optimal hydration levels tailored entirely to their personal health metrics and daily routines.
+**Hydravo** is a modern, production-grade hydration tracking and reminder application built with Flutter and Dart. Designed around performance, personalization, and user experience, Hydravo helps users maintain healthy hydration habits through intelligent reminders, personalized water intake goals, insightful analytics, and seamless over-the-air updates.
 
-Built with an emphasis on user freedom, it features an advanced continuous manual reminder interval engine, deep analytics, and an over-the-air (OTA) in-app update framework hosted completely open-source via GitHub Releases.
-
----
-
-## 🚀 Features
-
-### 🎨 Premium UI/UX & Themes
-* **Fluid Motion:** Built with advanced physics-based micro-interactions and smooth layout fades using `flutter_animate`.
-* **Theming Options:** Supports clean Light Mode, battery-saving Dark Mode, and a custom **Pookie Mode** (a cute personalized pink layout engine).
-* **Custom Brand Assets:** Fully custom adaptive launcher icons and native splash screens running natively across varying Android API scales.
-
-### 🔔 Advanced Custom Reminder Engine
-* **Ultimate Pacing Freedom:** Ditch the rigid choices. Features a continuous manual duration slider allowing alert tracking down to the exact minute (from 10 mins to 4 hours).
-* **Routine Boundaries:** Dynamically schedules smart, periodic push notification alerts strictly between user-configured Wake-up and Sleep windows.
-* **Local Processing:** Powered by `flutter_local_notifications` and exact timezone matching to repeat daily without draining background device battery pools.
-
-### 📊 Deep Historical Analytics
-* **Intake Charts:** Gorgeous interactive bar charts generated via `fl_chart` detailing a rolling 7-day hydration progress analysis.
-* **Dynamic Visual Cues:** Bars intelligently change color states depending on target percentage completions (Goal Hit, 75%+, Low).
-* **Weekly Reports:** Automated statistical breakdowns highlighting Daily Averages, Goal Streaks, Best Tracking Days, and algorithmic text-based progress analysis.
-* **Day Breakdown:** Sleek historical list layouts with accurate progress meters for quick historical logs.
-
-### ⚙️ Personalized Health Calibration
-* **Dynamic Baseline Calculator:** Automatically generates standard target hydration lines by cross-parsing user data metrics: Age, Weight (supports fluid KG/LBS calibrations), Gender, and localized Activity Levels.
-* **Interactive Profile Management:** Instantly update body metrics and personal display names on the fly, with automated notification rescheduling linked directly back to your routine updates.
-
-### 🔄 Over-The-Air (OTA) In-App Updates
-* **Seamless Upgrades:** Custom update system bypassing the Play Store entirely. The app pulls changes over a cache-busted stream straight from a repository `version.json`.
-* **In-App Downloading:** Downloads new releases directly inside a custom update modal using a chunked byte stream with a live-rendering percentage progress bar.
-* **Native Intent Installs:** Automatically invokes native Android package installation providers (`open_filex`) as soon as the package streams hit 100%.
-* **Maintenance Guard:** Built-in cloud switch to instantly lock down the application layout structure into a graceful maintenance display during breaking infrastructure upgrades.
+The application combines a polished user interface, robust notification scheduling, cloud-backed user management, and advanced progress tracking to deliver a reliable daily hydration companion.
 
 ---
 
-## 🛠️ Tech Stack & Packages
+## ✨ Key Features
 
-| Layer | Technology / Package | Description |
-| :--- | :--- | :--- |
-| **Core Framework** | Flutter & Dart | Multi-platform compilation target layer |
-| **State Management** | `flutter_riverpod` | Scalable, reactive dependency tracking and UI states |
-| **Backend Integration**| Firebase Auth / Firestore | Cloud account mapping, Google Sign-In, & live logs sync |
-| **Local Notifications** | `flutter_local_notifications` | High-importance exact foreground background alert streams |
-| **Data Visualization** | `fl_chart` | Interactive, highly responsive analytical graphs |
-| **Motion Layout** | `flutter_animate` | High-fidelity chained layout fade and scale triggers |
-| **OTA Installer** | `dio` & `open_filex` | Chunked HTTP byte streams and native apk intent calls |
+### 🎨 Modern User Experience
+
+* Beautiful, responsive interface optimized for Android devices.
+* Smooth animations and micro-interactions powered by `flutter_animate`.
+* Multiple theme options including:
+
+  * Light Mode
+  * Dark Mode
+  * Pookie Mode (custom pink-themed experience)
+* Adaptive launcher icons and native splash screens for a consistent branded experience across Android versions.
 
 ---
 
-## 📂 Project Architecture
+### 🔔 Intelligent Reminder System
 
-The codebase follows a modular, feature-first clean architecture pattern designed for absolute scannability and ease of scaling:
+Hydravo provides complete control over hydration reminders without limiting users to predefined intervals.
+
+#### Features
+
+* Fully customizable reminder intervals from **10 minutes to 4 hours**
+* Minute-level precision through an interactive interval selector
+* User-defined wake-up and sleep schedules
+* Automatic notification scheduling within active hours
+* Timezone-aware reminder generation
+* Battery-efficient local notification processing
+
+Built using `flutter_local_notifications`, reminders operate entirely on-device for reliability and privacy.
+
+---
+
+### 📊 Advanced Hydration Analytics
+
+Track progress and identify hydration patterns through detailed historical insights.
+
+#### Analytics Dashboard
+
+* Interactive 7-day hydration charts
+* Daily intake tracking and goal comparison
+* Color-coded achievement indicators
+* Historical intake logs with progress visualization
+
+#### Weekly Insights
+
+* Daily average consumption
+* Goal completion streaks
+* Highest-performing hydration days
+* Automated progress summaries and trend analysis
+
+Visualizations are powered by `fl_chart` for a smooth and responsive experience.
+
+---
+
+### ⚙️ Personalized Hydration Goals
+
+Hydravo automatically calculates recommended daily water intake based on individual user metrics.
+
+#### Supported Parameters
+
+* Age
+* Weight (KG / LBS)
+* Gender
+* Activity Level
+
+Users can update their profile at any time, with hydration targets and reminder schedules recalculated instantly to reflect new preferences.
+
+---
+
+### ☁️ Cloud Integration
+
+Secure authentication and cloud synchronization ensure a seamless experience across sessions.
+
+#### Capabilities
+
+* Google Sign-In
+* Firebase Authentication
+* Firestore-based user data storage
+* Secure profile management
+* Real-time hydration data synchronization
+
+---
+
+### 🔄 Over-The-Air (OTA) Updates
+
+Hydravo includes a custom update delivery system that enables users to receive application updates directly without requiring Play Store releases.
+
+#### Update Framework Features
+
+* GitHub Releases-powered distribution
+* Automatic version checking via remote `version.json`
+* In-app APK downloads with live progress tracking
+* Native Android installation flow integration
+* Cache-busted update delivery for reliability
+
+#### Maintenance Mode
+
+A remotely controlled maintenance switch allows critical updates or infrastructure maintenance to be performed without requiring a new application release.
+
+---
+
+## 🏗️ Technology Stack
+
+| Layer                   | Technology                  | Purpose                                      |
+| ----------------------- | --------------------------- | -------------------------------------------- |
+| Framework               | Flutter & Dart              | Cross-platform application development       |
+| State Management        | Riverpod                    | Reactive and scalable state management       |
+| Authentication          | Firebase Auth               | User authentication and account management   |
+| Database                | Cloud Firestore             | Cloud-based data storage and synchronization |
+| Notifications           | flutter_local_notifications | Local hydration reminders                    |
+| Analytics Visualization | fl_chart                    | Interactive charts and progress tracking     |
+| Animations              | flutter_animate             | UI transitions and micro-interactions        |
+| OTA Updates             | dio, open_filex             | Update downloading and APK installation      |
+
+---
+
+## 📁 Project Structure
+
+Hydravo follows a feature-first modular architecture designed for maintainability, scalability, and clean separation of concerns.
 
 ```text
 lib/
 ├── core/
-│   ├── services/       # Core background executors (Notifications, Local DB)
-│   ├── theme/          # Color palettes, custom typography configurations
-│   └── utils/          # Universal constants, helper string formatters
-└── features/
-    ├── auth/           # Login layouts, Google auth, onboarding flows
-    ├── home/           # Dashboard viewports, navigation state anchors
-    ├── history/        # Weekly report metrics, fl_chart bar builders
-    ├── settings/       # Profile modifiers, custom manual interval selectors
-    └── update/         # In-app updater dialog modules, maintenance pages
+│   ├── services/
+│   │   ├── notifications/
+│   │   ├── storage/
+│   │   └── updates/
+│   ├── theme/
+│   └── utils/
+│
+├── features/
+│   ├── auth/
+│   ├── home/
+│   ├── history/
+│   ├── settings/
+│   └── update/
+│
+└── main.dart
+```
+
+This architecture enables independent feature development while keeping business logic, UI, and services organized and easy to scale.
+
+---
+
+## 🎯 Mission
+
+Hydravo was built with a simple goal:
+
+> Help people build consistent hydration habits through intelligent reminders, personalized goals, and meaningful insights—without compromising performance, privacy, or user experience.
+
+By combining thoughtful design with reliable technology, Hydravo transforms water tracking from a daily task into a seamless habit.
