@@ -1,7 +1,7 @@
 {
-  "latest_version": "1.0.0",
+  "latest_version": "1.0.1",
   "min_version": "1.0.0",
-  "apk_url": "https://github.com/justtheguyak/Hydravo/releases/download/v1.0.0/app-release.apk",
+  "apk_url": "https://github.com/justtheguyak/Hydravo/releases/download/v1.0.1/hydravo.apk",
   "release_notes": "Initial Release of Hydravo! 💧\n• Beautiful water tracking UI\n• Smart historical charts\n• Interactive reminder notifications\n• Made by Altamas",
   "force_update": false,
   "is_maintenance": false
